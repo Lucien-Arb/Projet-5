@@ -1,0 +1,112 @@
+.btn-color {
+  background-color: #8f5bfe;
+  color: #fff;
+}
+.btn-color:hover {
+  color: #fff;
+  background: #e68a09;
+  background: linear-gradient(145deg, #e68a09 0%, #8f5bfe 100%);
+}
+
+.btn-color-secondary {
+  background-color: #e68a09;
+  color: #fff;
+}
+.btn-color-secondary:hover {
+  color: #fff;
+  background: #e68a09;
+  background: linear-gradient(145deg, #e68a09 0%, #8f5bfe 100%);
+}
+
+.cart-button {
+  background-color: #8f5bfe;
+  border-radius: 10px;
+  padding: 5px 20px;
+  text-decoration: none !important;
+  color: #fff;
+  transition: background-image 1s ease;
+}
+.cart-button:hover {
+  color: #fff;
+  background-color: #7e4aee;
+  background-image: linear-gradient(145deg, #e68a09 0%, #8f5bfe 100%);
+  transition: background-image 1s ease;
+}
+
+.navbar {
+  background-color: #261624;
+  padding: 15px 30px;
+}
+
+.bg-image {
+  background-image: url("/images/new-york.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  position: relative;
+}
+
+.filter {
+  height: 100%;
+  background: rgba(143, 91, 254, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-color {
+  color: #fff;
+}
+
+.bg-color {
+  background-color: #261624;
+}
+
+.bg-image-thanks {
+  background-image: url("/images/new-york.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 86.5vh;
+  position: relative;
+}
+
+.filter {
+  height: 100%;
+  background: rgba(31, 31, 31, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-violet {
+  background-color: #8f5bfe;
+}
+
+.img-center {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.image {
+  width: 80%;
+  height: auto;
+  border-radius: 4px;
+  margin-left: 15px;
+}
+
+.product {
+  display: flex;
+  margin: 50px 0;
+  align-content: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.3);
+}
+
+.is-invalid {
+  border-color: red;
+}
+
+/*# sourceMappingURL=style.css.map */

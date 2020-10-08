@@ -1,0 +1,72 @@
+.btn-color {
+  background-color: #8f5bfe;
+  color: #fff;
+}
+.btn-color:hover {
+  color: #fff;
+  background: #e68a09;
+  background: linear-gradient(145deg, #e68a09 0%, #8f5bfe 100%);
+}
+
+.btn-color-secondary {
+  background-color: #e68a09;
+  border-color: #e68a09;
+}
+.btn-color-secondary:hover {
+  color: #fff;
+  border-color: #e68a09;
+  background: #e68a09;
+  background: linear-gradient(145deg, #e68a09 0%, #8f5bfe 100%);
+}
+
+.navbar {
+  background-color: #261624;
+  padding: 15px 30px;
+}
+
+.bg-image {
+  background-image: url("/images/new-york.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  position: relative;
+}
+
+.filter {
+  height: 100%;
+  background: rgba(143, 91, 254, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-color {
+  color: #fff;
+}
+
+.bg-color {
+  background-color: #261624;
+}
+
+.img-center {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.image {
+  width: 600px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.product {
+  display: flex;
+  margin: 50px 0;
+  align-content: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/*# sourceMappingURL=style.css.map */
