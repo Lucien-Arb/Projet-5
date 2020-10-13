@@ -184,16 +184,13 @@ for (let i = 0; i < deleteRowButtons.length; i++) {
             if (keys[x] == deleteRowButtons[i].getAttribute("data-id")) {
                 
                 let num = parseInt(localStorage.getItem('productNumbers'));
-                    num = num - productID[keys[0]];
+                    num = num - productID[keys[x]][0].incart;
                 localStorage.setItem('productNumbers', JSON.stringify(num));
                 
-
-                let price = productID[keys[0]].price * productID[keys[0]].incart;
+                let price = productID[keys[x]][0].price * productID[keys[x]][0].incart;
                     price = parseInt(localStorage.getItem('totalCost')) - price;
                 localStorage.setItem('totalCost', JSON.stringify(price));
-               
-
-                
+ 
                 delete productID[keys[x]];
                 localStorage.setItem('itemsInCart', JSON.stringify(productID));
             };
