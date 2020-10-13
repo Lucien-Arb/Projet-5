@@ -5,7 +5,7 @@ let item = {};
 let infos = new URLSearchParams(document.location.search.substring(1));
 document.querySelector('#cart').textContent = localStorage.getItem('productNumbers');
 
-
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Switch sur toutes les pages pour faire passer les infos produits entre chacunes d'elles
 console.log(window.location.pathname)
 
@@ -36,6 +36,7 @@ switch (window.location.pathname) {
         order ? orderItems(order) : notfound();
 }
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Ajoute le produit au panier
 for (let i = 0; i < addCart.length; i++) {
     addCart[i].addEventListener('click', (e) => {
@@ -47,6 +48,7 @@ for (let i = 0; i < addCart.length; i++) {
     })
 }
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Vérifiation du formulaire puis envoie des données au server et affiche du récapitulatif de commande
 function validRegex() {
     let inputs = document.querySelectorAll('input.form-control');
@@ -123,6 +125,8 @@ function validRegex() {
         };
     };
 
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 function formV(Regtest, input) {
     if (Regtest) {
         input.classList.remove("is-invalid")
@@ -135,6 +139,7 @@ function formV(Regtest, input) {
     return false;
 }
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Fonction qui incrémente le bouton panier dans la nav bar
 function cartNum() {
     let numbers = parseInt(localStorage.getItem('productNumbers'));
@@ -149,6 +154,7 @@ function cartNum() {
     }
 };
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Fonction qui supprime un produit que ce soit sur la nav bar, bouton supprimer(produit), gérer les quantitées
 function cartNumDeleted() {
     let numbers = parseInt(localStorage.getItem('productNumbers'));
@@ -163,28 +169,40 @@ function cartNumDeleted() {
     }
 };
 
-// Fonction pour supprimer un produit du panier
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+// Boucle for pour supprimer un produit du panier
 const deleteRowButtons = document.getElementsByClassName("delete-row");
 let productID = JSON.parse(localStorage.getItem("itemsInCart"));
+const keys = Object.keys(productID);
 
 for (let i = 0; i < deleteRowButtons.length; i++) {
+
     deleteRowButtons[i].addEventListener('click', (e) => {
 
-       for (let x = 0; x < productID.length; x++) {
+       for (let x = 0; x < keys.length; x++) {
 
-            if (productID[productID.key(x)] == deleteRowButtons[i].getAttribute("data-id")) {
+            if (keys[x] == deleteRowButtons[i].getAttribute("data-id")) {
+                
+                let num = parseInt(localStorage.getItem('productNumbers'));
+                    num = num - productID[keys[0]];
+                localStorage.setItem('productNumbers', JSON.stringify(num));
+                
 
-                localStorage.delete(productID[productID.key(x)]);
-                localStorage.setItem('itemsInCart', productID[productID.key(x)]);
-                window.location.reload(true);
-                console.log(productID);
+                let price = productID[keys[0]].price * productID[keys[0]].incart;
+                    price = parseInt(localStorage.getItem('totalCost')) - price;
+                localStorage.setItem('totalCost', JSON.stringify(price));
+               
+
+                
+                delete productID[keys[x]];
+                localStorage.setItem('itemsInCart', JSON.stringify(productID));
             };
-       }; 
-    console.log(productID.key(x));
-    console.log(deleteRowButtons[i].getAttribute("data-id"));
+            window.location.reload();
+       };
     });
-};
+}; 
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Fonction pour faire le total de produits dans le panier
 function total() {
     let product = updateProduct();
@@ -197,6 +215,7 @@ function total() {
     }
 }
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 //Fonction afficher le contenu du panier 
 function displayCart() {
     let cartItems = localStorage.getItem('itemsInCart');
@@ -243,6 +262,7 @@ function displayCart() {
         });
     }
 
+    //---------------------------------------------------------------------------------------------------------------------------------------------------
     //Boucle pour gérer le nombres de produits dans le panier ainsi que le prix total
     let inputs = document.querySelectorAll('.itemcount');
     for (let i = 0; i < inputs.length; i++) {
@@ -288,6 +308,7 @@ function displayCart() {
     }
 }
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Quand la page n'est pas trouvée => 404
 function notfound() {
     document.location = '404.html'

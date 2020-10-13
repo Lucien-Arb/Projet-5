@@ -5,7 +5,7 @@ let item = {};
 let infos = new URLSearchParams(document.location.search.substring(1));
 document.querySelector('#cart').textContent = localStorage.getItem('productNumbers');
 
-
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Switch sur toutes les pages pour faire passer les infos produits entre chacunes d'elles
 console.log(window.location.pathname)
 
@@ -36,10 +36,12 @@ switch (window.location.pathname) {
         order ? orderItems(order) : notfound();
 }
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Réccupération des informations sur les caméras et affichage sur la page d'accueil
 function listing(url) {
     fetch(url).then(function (response) {
         if (response.status !== 200) {
+            // TEST : Permet d'afficher si il y a un problème lors de la récupération des fiches produits de l'API
             console.log('Il y a un problème. Status Code: ' + response.status);
             return;
         }
@@ -62,16 +64,16 @@ function listing(url) {
                 </div>
                 `
                 mainContainer.appendChild(div);
-            }
+            };
         });
-    }
-    )
+    })
         .catch(function (err) {
             console.log('Fetch Error :', err);
         });
-}
+};
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Quand la page n'est pas trouvée => 404
 function notfound() {
-    document.location = '404.html'
-}
+    document.location = '404.html';
+};

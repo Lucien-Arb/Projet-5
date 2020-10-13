@@ -5,7 +5,7 @@ let item = {};
 let infos = new URLSearchParams(document.location.search.substring(1));
 document.querySelector('#cart').textContent = localStorage.getItem('productNumbers');
 
-
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Switch sur toutes les pages pour faire passer les infos produits entre chacunes d'elles
 console.log(window.location.pathname)
 
@@ -36,11 +36,12 @@ switch (window.location.pathname) {
         order ? orderItems(order) : notfound();
 }
 
-
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 function product(id) {
     document.location = 'products.html?id=' + id
 }
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Ajoute le produit au panier
 for (let i = 0; i < addCart.length; i++) {
     addCart[i].addEventListener('click', (e) => {
@@ -52,7 +53,8 @@ for (let i = 0; i < addCart.length; i++) {
     })
 }
 
-// Affiche le produit sélectionné en page d'acceuil sur la page produit avec un affiche plus précis pour voir plus de détails et aussi l'ajouter au panier
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+// Affiche le produit sélectionné en page d'acceuil sur la page produit pour voir plus de détails et aussi l'ajouter au panier
 function prod(id) {
     fetch(url + '/' + id).then((response) => {
         if (response.ok) {
@@ -76,6 +78,7 @@ function prod(id) {
 }
 
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Fonction qui incrémente le bouton panier dans la nav bar
 function cartNum() {
     let numbers = parseInt(localStorage.getItem('productNumbers'));
@@ -90,6 +93,7 @@ function cartNum() {
     }
 }
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Fonction qui ajoute un produit dans le localStorage et dans le panier avec son ID
 function cartItems() {
     //Si le produit est différent de null donc présent dans le panier
@@ -122,6 +126,7 @@ function cartItems() {
     }
 }
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Fonction de mise à jour du produit et de ses informations
 function updateProduct() {
     let product = [{
@@ -135,6 +140,7 @@ function updateProduct() {
     return product;
 }
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Fonction pour ajouter un produit
 function addItem(id, product, json) {
     let item;
@@ -153,6 +159,7 @@ function addItem(id, product, json) {
     return item;
 }
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Fonction pour faire le total de produits dans le panier
 function total() {
     let product = updateProduct();
@@ -165,6 +172,7 @@ function total() {
     }
 }
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Quand la page n'est pas trouvée => 404
 function notfound() {
     document.location = '404.html'

@@ -6,7 +6,7 @@ let infos = new URLSearchParams(document.location.search.substring(1));
 document.querySelector('#cart').textContent = localStorage.getItem('productNumbers');
 
 console.log(window.location.pathname)
-
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 switch (window.location.pathname) {
     case '/index.html':
     case '/':
@@ -34,6 +34,7 @@ switch (window.location.pathname) {
         order ? orderItems(order) : notfound();
 }
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Fonction pour passer la commande et afficher le contenu du panier sous forme de liste récapitulative sur la page de confirmation de commande
 function orderItems(id) {
     let order = JSON.parse(localStorage.getItem('order'));
@@ -46,8 +47,7 @@ function orderItems(id) {
                 <th scope ="row">${items._id}</th>
                 <td>${items.name}</td>
                 <td>${items.price / 100 + '€'}</td>
-            </tr>
-            `
+            </tr>`
             total += items.price;
         })
         document.querySelector('.price').textContent = `Prix total : ${total / 100 + '€'}`
@@ -55,6 +55,7 @@ function orderItems(id) {
     }
 }
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------
 // Quand la page n'est pas trouvée => 404
 function notfound() {
     document.location = '404.html'
