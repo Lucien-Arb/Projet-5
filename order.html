@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="public/css/style.css">
+  <link rel="stylesheet" href="public/main.scss">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
+  <script  text="text/javascript" type="module" src="./js/order.js" defer></script>
+  <title>Orinco</title>
+</head>
+
+<body>
+
+  <header>
+    <!-- NAV BAR-->
+    <nav class="navbar navbar-dark navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Orinco</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+            <li class="nav-item d-flex">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link" aria-current="page" href="products.html">Product</a>
+            </li>
+          </ul>
+          <a href="panier.html" class="cart-button panier">
+            <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-cart3" fill="white"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+            </svg> Cart <span class="badge badge-light cart" id="cart">0</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="thanks">
+    <div class="bg-image-thanks">
+        <div class="filter">
+            <div class="container">
+                <div class="card shadow bg-white rounded"  id="infos">
+                    <!-- AFFICHAGE DYNAMIQUE DU PRODUIT EN JS -->
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-12 col-md-12 col-sm-12">
+                            <div class="card-body">
+                                <h1 class="card-title" id="thankYou">Merci pour votre commande</h1>
+                                <h2 class="card-title" id="orderID">Commande n°: </h2>
+                                <table class="table table-hover table-striped table-bordered table-responsive-sm">
+                                    <thead class="thead-inverse">
+                                        <tr class="bg-violet">
+                                            <th scope="col">Réf</th>
+                                            <th scope="col">Produit</th>
+                                            <th scope="col">Prix</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="products-list">
+                
+                                    </tbody>
+                                </table>
+                                <h3 class="price">Prix total : </h3>   
+                                <div class="get-back text-center mt-5 mb-4">
+                                    <a href="index.html" class="cart-button panier back mt-5 py-2 px-4 mt-5">Revenir à l'accueil</a>     
+                                </div> 
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+
+
+    <footer class="bg-color text-center text-lg-left">
+        <!-- Copyright -->
+        <div class="text-center text-white p-3 ">
+            © 2020 Copyright:
+            <a class="text-white" href="https://abd-al-hadi.com/">Designed by Me.</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+</body>
+
+</html>
+  

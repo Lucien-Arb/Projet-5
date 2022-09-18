@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="public/css/style.css">
+  <link rel="stylesheet" href="public/main.scss">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
+  <script type="module" text="text/javascript" src="./js/panier.js" defer></script>
+  <!--<script src="panier.js" defer ></script>-->
+
+  <title>Orinco</title>
+</head>
+
+<body>
+
+  <header>
+    <!-- NAV BAR-->
+    <nav class="navbar navbar-dark navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Orinco</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+            <li class="nav-item d-flex">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link" aria-current="page" href="products.html">Product</a>
+            </li>
+          </ul>
+          <a href="panier.html" class="cart-button panier">
+            <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-cart3" fill="white"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+            </svg> Cart <span class="badge badge-light cart" id="cart">0</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HEADER -->
+    <div class="text-center bg-image">
+      <div class="filter">
+        <div class="text-color">
+          <h1 class="mb-3">Votre commande est presque terminée !<br> Complétez le formulaire ci-dessous.</h1>
+        </div>
+      </div>
+  </header>
+
+  <!-- FORMULAIRE COMMANDE -->
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-8 mb-4">
+        <!--Section: Checkout form-->
+        <section class="shadow-5 p-4">
+          <form>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="lastname" class="form-control" name="lastname" placeholder="Doe"/>
+                  <label class="form-label" for="lastname" style="margin-left: 0px;">Nom</label>
+                  <div class="form-notch">
+                    <div class="form-notch-leading" style="width: 9px;"></div>
+                    <div class="form-notch-middle" style="width: 68.8px;"></div>
+                    <div class="form-notch-trailing"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="name" class="form-control" name="name" placeholder="John"/>
+                  <label class="form-label" for="name" style="margin-left: 0px;">Prénom</label>
+                  <div class="form-notch">
+                    <div class="form-notch-leading" style="width: 9px;"></div>
+                    <div class="form-notch-middle" style="width: 68px;"></div>
+                    <div class="form-notch-trailing"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Text input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="postalcode" class="form-control" name="postalcode" placeholder="34000"/>
+              <label class="form-label" for="postalcode" style="margin-left: 0px;">Code postal</label>
+              <div class="form-notch">
+                <div class="form-notch-leading" style="width: 9px;"></div>
+                <div class="form-notch-middle" style="width: 98.4px;"></div>
+                <div class="form-notch-trailing"></div>
+              </div>
+            </div>
+
+            <!-- Text input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="form6Example4" class="form-control" name="adress" placeholder="26 rue de l'Aiglon"/>
+              <label class="form-label" for="adress" style="margin-left: 0px;">Adresse postale</label>
+              <div class="form-notch">
+                <div class="form-notch-leading" style="width: 9px;"></div>
+                <div class="form-notch-middle" style="width: 55.2px;"></div>
+                <div class="form-notch-trailing"></div>
+              </div>
+            </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="email" class="form-control" name="email" placeholder="john.doe@gmail.com"/>
+              <label class="form-label" for="email" style="margin-left: 0px;">Email</label>
+              <div class="form-notch">
+                <div class="form-notch-leading" style="width: 9px;"></div>
+                <div class="form-notch-middle" style="width: 40px;"></div>
+                <div class="form-notch-trailing"></div>
+              </div>
+            </div>
+
+            <!-- City input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="city" class="form-control" name="city" placeholder="Montpellier"/>
+              <label class="form-label" for="city" style="margin-left: 0px;">Ville</label>
+              <div class="form-notch">
+                <div class="form-notch-leading" style="width: 9px;"></div>
+                <div class="form-notch-middle" style="width: 44.8px;"></div>
+                <div class="form-notch-trailing"></div>
+              </div>
+            </div>
+
+            <!-- Submit button & Total -->
+            <button type="submit" id="buyIT"
+              class="btn mb-4 btn-color-secondary py-2 px-5 d-flex text-center commande">
+              Valider les informations et passer commande
+            </button>
+            <div class="pull-right mr-2">
+              <p><strong>Total : <em id="total">0.00€</em></strong></p>
+            </div>
+          </form>
+        </section>
+        <!--Section: Checkout form-->
+      </div>
+
+      <div class="col-md-4 mb-4 mt-4">
+        <!--Section: Summary-->
+        <div class="card-body cart additem">
+
+        </div>
+        <!--Section: Summary-->
+      </div>
+    </div>
+    </section>
+  </div>
+
+  <!--Section: forms-->
+ 
+
+
+  <footer class="bg-color text-center text-lg-left">
+    <!-- Copyright -->
+    <div class="text-center text-white p-3 ">
+      © 2020 Copyright:
+      <a class="text-white" href="https://abd-al-hadi.com/">Designed by Me.</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</body>
+
+</html>
